@@ -1,0 +1,807 @@
+/*********************************************************
+ * VARIABLES GLOBALES
+ *********************************************************/
+:root{
+    --color-background: #e4e2e2;
+    --color-backraund-blnaco: #fff;
+    --color-txt-primary: #000000;
+    --color-txt-secondary: #555555;
+    --color-txt-resaltado: #1d4ed8;
+    --color-border:#e0e0e0;
+    --color-parafo:#00000f;
+    --color-capas: oklch(0.985 0.002 248.839);
+    --color-tituloCapas: oklch(0.21 0.034 264.665);
+    --color-textoParafoDiv:oklch(0.446 0.03 256.802);
+    --color-redesSociales:oklch(0.373 0.034 259.733);
+    --color-il: #79E2E8;
+    --color-il-hover: #864feb;
+
+    --font_size-S: 20px;
+    --font_size-xs: 18px;
+    --font-size-normal: 24px;
+    --font-size-M: 48px;
+    --font-size-L: 72px;
+    --font-size-X: 66px;
+    --font-size-footer: 16px;
+    --gap-4: 25rem;
+
+    --font-heading : 'Montserrat', sans-serif;
+    --font-body : 'Inter', sans-serif;
+}
+
+/*********************************************************
+ * ETIQUETAS BASE
+ *********************************************************/
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--font-body);
+    font-size: var(--font-size-normal);
+    color: var(--color-txt-primary);
+    margin: 0;
+}
+
+h1{
+    font-family: var(--font-heading);
+    font-size: var(--font-size-X);
+    font-weight: 600;
+    margin-bottom: 5rem;
+}
+
+h2{
+    margin: 0;
+}
+
+/*********************************************************
+ * MENU / NAVBAR
+ *********************************************************/
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: background 0.3s ease;
+    
+    
+}
+
+
+.menu ul{
+    font-family: var(--font-heading);
+    color: #000000;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--color-txt-primary);
+}
+
+/* Estados del menú */
+.menu.in-header {
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.menu--top {
+    background: transparent;
+}
+
+.menu--overlay {
+    background: rgba(255, 255, 255, 0.897);
+}
+
+.menu.scrolled {
+    background: #9ff3f3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+
+/*********************************************************
+ * HEADER / HERO
+ *********************************************************/
+header{
+    height: 100vh;
+    height: auto;
+}
+
+.header{
+    padding: 96px;
+}
+
+.hero{
+    background-color: var(--color-background);
+    /*padding: 6px;*/
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.hero_degradado{
+    background: linear-gradient(
+        90deg,
+        rgba(127, 240, 236, 1) 0%,
+        rgb(226, 234, 235) 50%,
+        rgba(235, 240, 239, 1) 100%
+    );
+}
+
+.hero::before{
+    content: "{} [] <>  array";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(0,0,0,0.1);
+    font-family: var(--font-body);
+    font-size: var(--font-size-X);
+    padding: 20px;
+    white-space: pre-wrap;
+    pointer-events: none;
+    transform: rotate(3deg);
+}
+
+/*********************************************************
+ * CONTENEDOR GENERAL
+ *********************************************************/
+.contenedor{
+    align-items: center;
+    margin: 0;
+    padding: 96px;
+}
+
+/*********************************************************
+ * CONTENIDO DEL HERO y video
+ *********************************************************/
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Cambiado a center */
+    padding: 96px; /* Mantenemos tu padding */
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px; /* Evita que el vídeo se aplaste demasiado al minimizar */
+    padding: 20px;    /* Un padding pequeño para que no toque los bordes */
+    z-index: 10;      /* Lo ponemos por encima por si algo lo tapa */
+    margin-top: 280px; /* Un margen grande para separarlo del texto */
+
+}
+
+.hero-video video {
+    width: 200%;      /* Que ocupe todo su contenedor */
+    max-width: 500px; /* Pero que no se haga gigante en pantallas 4K */
+    height: auto;     /* Mantener proporción */
+    border: 3px solid var(--color-txt-resaltado); /* Un borde*/
+    border-radius: 10px; /* Bordes redondeados para un look más suave */
+}
+
+
+/*********************************************************
+ * RESALTADOS
+ *********************************************************/
+
+
+.resaltado{
+    color : var(--color-txt-resaltado);
+    font-size : var(--font-size-x);
+}
+
+/*********************************************************
+ * TEXTOS DEL HERO
+ *********************************************************/
+.hello{
+    font-family: var(--font-heading);
+    font-size: var(--font-size-M);
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.job-title{
+    font-family: var(--font-heading);
+    color: var(--color-txt-secondary);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+/*********************************************************
+ * REDES SOCIALES
+ *********************************************************/
+.redes {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    padding: 96px 0px;
+}
+
+.redes a {
+    /*padding: 12px;
+    background: rgba(72, 11, 216, 0.4);
+    border-radius: 8px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.redes a:hover img{
+   transform: scale(1.15) rotate(15deg);
+    
+    opacity: 1; /* Se vuelve totalmente opaco */
+    
+    /* Opcional: añade una sombra suave para dar profundidad */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    /* Opcional: cambia el color del ícono al pasar el mouse */
+    filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
+    
+}
+
+
+
+
+
+/*********************************************************
+ * ANIMACIONES
+ *********************************************************/
+@keyframes animacion {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hello{
+    animation: animacion 1s ease forwards;
+}
+
+.job-title{
+    animation: animacion 1s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    font-size: var(--font_size-S);
+}
+
+h1{
+    animation: animacion 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.redes{
+    animation: animacion 2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.hero-video video{
+    animation: animacion 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+/*********************************************************
+ * SECCIONES REUTILIZABLES
+ *********************************************************/
+.section{
+   padding: 96px;
+    }
+
+.section-container{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 20rem;
+    max-width: 150rem;
+    margin: 0 auto;
+    padding: 0.2rem;
+}
+
+.section-title h2{
+    font-family: var(--font-heading);
+    font-size: 72px;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 5px solid var(--color-txt-resaltado);
+    margin-left: 0.83rem;
+    max-width: 100px;
+}
+
+.capasDerecha{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/*********************************************************
+ * CONTENIDO DE SECCIÓN
+ *********************************************************/
+.section-content{
+    background-color: var(--color-capas);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 32px;
+}
+
+.section-content:hover{
+    box-shadow: 17px 11px 5px 4px rgba(0,0,0,0.59);
+    transform: translate(5px, 15px);
+}
+
+.section-content p{
+    color: var(--color-parafo);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+p.parafoCapa{
+    color: var(--color-textoParafoDiv);
+    font-size: var(--font_size-xs);
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/*********************************************************
+ * PROYECTOS
+ *********************************************************/
+.divProyecto{
+    display: flex;
+    background-color: var(--color-txt-primary);
+    border: var(--color-tituloCapas) 1px solid;
+    border-radius: 100%;
+    padding: 10px;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.enlaceProyecto{
+    display: flex;
+    color: var(--color-backraund-blnaco);
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+/*********************************************************
+ * SKILLS
+ *********************************************************/
+.skills{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 1rem;
+    font-size: var(--font_size-xs);
+}
+
+.skills li{
+    font-family: var(--font-heading);
+    font-size: 14px;
+    background-color: var(--color-il);
+    border: 1px solid var(--color-il);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.skills li:hover{
+    background-color: var(--color-txt-resaltado);
+    cursor: pointer;
+    color: var(--color-backraund-blnaco);
+    
+}
+
+/*********************************************************
+ * EXPERIENCIA LABORAL
+ *********************************************************/
+div.cabeceraCapa{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 2rem;
+    row-gap: 0.1rem;
+    align-items: start;
+    margin-bottom: 0.2rem;
+}
+
+h3.titloCapa{
+    font-family: var(--font-heading);
+    font-size: var(--font_size-S);
+    color: var(--color-tituloCapas);
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+p.tituloAzul{
+    font-family: var(--font-heading);
+    font-size: var(--font_size-xs);
+    color: var(--color-txt-resaltado);
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+}
+
+
+/***********************************************************
+ * DETALLES EXPERIENCIA LABORAL
+ *********************************************************/
+div.timeCapa{
+    font-family: var(--font-heading);
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+    white-space: nowrap;
+    font-size: 16px;
+    color: var(--color-txt-secondary);
+}
+
+ul.textoCapasUl{
+    color: var(--color-textoParafoDiv);
+    font-family: var(--font-heading);
+    font-size: var(--font_size-xs);
+    padding-left: 1.5rem;
+}
+ul.textoCapasUl li{
+    margin-bottom: 0.8rem;
+}
+
+/*********************************************************
+ * Footer
+ *********************************************************/
+.footer{
+background-color: var(--color-capas);
+    border-top: 1px solid var(--color-border);
+}
+.footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+    margin: 0px 126.5px;
+    padding: 48px 32px;
+    max-width: 1500px;
+    justify-items: center;
+    align-items: center;
+}
+
+.titulo-footer {
+    font-family: var(--font-heading);
+    font-size: var(--font_size-S);
+    color: var(--color-tituloCapas);
+    margin: 0;
+}
+.footer-content {
+    color: var(--color-textoParafoDiv);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-footer);
+    margin: 0;
+    
+}
+
+
+.parafo-footer{
+     font-family: var(--font-heading);
+    font-size: var(--font-size-footer);
+    color: var(--color-textoParafoDiv);
+    margin-top: 8px;
+}
+
+.parafo2-footer{
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--color-textoParafoDiv);
+    margin: 0px;
+    justify-items: center;
+}
+
+/*********************************************************
+ * Menu footer
+ **********************************************************/
+.menu-footer ul{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.menu-footer li{
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--color-textoParafoDiv);
+}
+
+.menu-footer a{
+    text-decoration: none;
+}
+
+.menu-footer li:hover{
+   /**cambia el color del enlace al pasar el mouse */
+    color: var(--color-txt-resaltado);
+}
+
+
+
+/*********************************************************
+ * Redes sociales footer
+ *********************************************************/
+.redes-footer {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    color: var(--color-txt-primary);
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+}
+
+.redes-footer img{
+    color: var(--color-txt-primary);
+}
+
+
+.redes-footer a:hover {
+    /**cambia el color del ícono al pasar el mouse */
+    filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
+}
+
+/*********************************************************
+ * Resaltados
+ *********************************************************/
+.Rpro{
+    font-weight: bold;
+    color: var(--color-txt-resaltado);
+}
+
+/***************************************************
+ * boton modo oscuro
+ *********************************************************/
+
+.boton-modo-oscuro {
+    position: absolute;
+    left: 20px;         /* Un pelín más de aire desde la izquierda */
+    top: 50%;           /* Lo mandamos a la mitad */
+    transform: translateY(-50%); /* El truco real para el centrado vertical */
+    z-index: 10001;     /* Aseguramos que esté por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 7px;
+    background-color: var(--color-il);
+    border: 1px solid var(--color-parafo);
+}
+
+
+
+
+/*****************************************************
+ * MODO OSCURO
+ *********************************************************/
+ /***VARIABLES MODO OSCURO***/
+ :root {
+    --color-background-dark: #0f172a;
+    --color-txt-primary-dark: #e0e0e0;
+    --color-txt-secondary-dark: #aaaaaa;
+    --color-txt-resaltado-dark: #79E2E8;
+    --color-border-dark: #333333;
+    --color-capas-dark: #111720;
+    --color-bordeCapas-dark: #333333;
+    --color-tituloCapas-dark: oklch(90.227% 0.02624 235.513);
+    --color-textoParafoDiv-dark: oklch(95.314% 0.00356 220.905);
+    --color-redesSociales-dark: oklch(0.3 0.03 240);
+
+    --font-darkMode-body: Arial, Helvetica, sans-serif;
+
+}
+
+/**Estilo del body para modo oscuro*/
+Body.dark-mode {
+    background-color: var(--color-background-dark);
+    color: var(--color-txt-primary-dark);
+    font-family: var(--font-darkMode-body);
+}
+/**Modo degradado para el hero en modo oscuro*/
+body.dark-mode .hero_degradado {
+    background: linear-gradient(
+        90deg,
+        rgba(15, 23, 42, 1) 0%,
+        rgb(17, 23, 32) 50%,
+        rgba(17, 23, 32, 1) 100%
+    );
+}
+
+/***Menu overlay en modo oscuro***/
+body.dark-mode .menu--overlay {
+    background: rgba(248, 247, 247, 0.1);
+}
+
+body.dark-mode .menu{
+        /* Un fondo blanco pero casi totalmente transparente (0.05 de opacidad) */
+    background-color: rgba(255, 255, 255, 0.05); 
+    
+    /* El truco mágico: desenfoca lo que pasa por detrás */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Para soporte en Safari */
+}
+
+body.dark-mode .menu ul li a {
+    text-decoration: none;
+    color: var(--color-txt-primary-dark);
+}
+
+/**Hover del menu en modo oscuro***/
+body.dark-mode .menu ul li a:hover {
+    color: var(--color-txt-resaltado);
+}
+
+/***texto del parafo job title en modo oscuro***/
+body.dark-mode .job-title {
+    color: var(--color-txt-secondary-dark);
+}
+/***Color de redes sociales en modo oscuro***/
+body.dark-mode .redes a img {
+    filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
+}
+/***Hover de las redes sociales en modo oscuro en blanco***/
+body.dark-mode .redes a:hover img {
+    filter: invert(86%) sepia(35%) saturate(702%) hue-rotate(135deg) brightness(97%) contrast(92%);
+}
+/***Sección de capas en modo oscuro***/
+body.dark-mode .section-content {
+    background-color: var(--color-capas-dark);
+    border: 1px solid var(--color-txt-resaltado);
+}
+/**Cmbiar el titulo de las capas en modo oscuro***/
+body.dark-mode h3.titloCapa {
+    color: var(--color-tituloCapas-dark);
+}
+/***cambiar el texto de las capas en modo oscuro***/
+body.dark-mode .parafoCapa {
+    color: var(--color-textoParafoDiv-dark);
+}
+/***Cambiar el coloer de las skills en modo oscuro***/
+body.dark-mode .skills li {
+    background-color: var(--color-txt-resaltado);
+    border: 1px solid var(--color-border);
+    color: var(--color-backraund-blnaco);
+}
+/**Hover de las skills en modo oscuro***/
+body.dark-mode .skills li:hover {
+    background-color: var(--color-txt-resaltado-dark);
+    color: #000000;
+    border: 1px solid var(--color-txt-resaltado);
+}
+/***Cambiar el fondo del divProyecto en modo oscuro***/
+body.dark-mode .divProyecto {
+    background-color: var(--color-txt-resaltado);
+}
+body.dark-mode .divProyecto:hover {
+    background-color: var(--color-il-hover);
+    transform: scale(1.15) rotate(5deg) translateY(-10px);
+    
+}
+
+/**Cmabiar el timepo de las capas en modo oscuro***/
+body.dark-mode .timeCapa p {
+    color: var(--color-txt-resaltado);
+}
+/***Cmbiar el texto de txtocapaUl en modo oscuro***/
+body.dark-mode ul.textoCapasUl {
+    color: var(--color-textoParafoDiv-dark);
+}
+
+/***Cambiar el fondo del footer en modo oscuro***/
+body.dark-mode .footer {
+    background-color: var(--color-capas-dark);
+    border-top: 1px solid var(--color-border-dark);
+}
+/**cambiar color del titulo del footer en modo oscuro***/
+body.dark-mode .titulo-footer {
+    color: var(--color-tituloCapas-dark);
+}
+/**cambiar el color del parafo del footer en modo oscuro***/
+body.dark-mode .parafo-footer {
+    color: var(--color-textoParafoDiv-dark);
+}
+/**Cambiar el coloer de las redes sociales del footer en modo oscuro***/
+body.dark-mode .redes-footer a {
+    filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
+}
+/***Hover de las redes sociales del footer en modo oscuro***/
+body.dark-mode .redes-footer a:hover {
+    filter: invert(86%) sepia(35%) saturate(702%) hue-rotate(135deg) brightness(97%) contrast(92%);
+}
+
+/**Cambiar el color del menu del footer en modo oscuro***/
+body.dark-mode .menu-footer li {
+    color: var(--color-textoParafoDiv-dark);
+}
+/**Hover del menu del footer en modo oscuro***/
+body.dark-mode .menu-footer li:hover {
+    color: var(--color-txt-resaltado);
+}
+/*Cambiar el coloer del parafo2-footer en modo oscuro*/
+body.dark-mode .parafo2-footer {
+    
+}
+/**Cambiar el fondo del boton de modo oscuro en modo oscuro (sí, es un poco meta)*/
+body.dark-mode .boton-modo-oscuro  {
+    background-color: var(--color-il-hover);
+    border: 2px solid var(--color-il-hover);
+    color: var(--color-backraund-blnaco);
+    padding: 5px 7px;
+}
+
+
+/*********************************************************
+ * MEDIA QUERIES
+ *********************************************************/
+@media (max-width: 1024px) {
+    .contenedor {
+        padding: 48px;
+    }
+    .section-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .hero-content {
+        flex-direction: column; /* El vídeo se va debajo del texto */
+        text-align: center;
+        padding: 40px 20px;    /* Reducimos paddings laterales */
+    }
+
+    .hero-video {
+        margin-top: 20px;      /* Un margen pequeño para separarlo del texto */
+        width: 100%;
+    }
+
+    div.redes{
+        padding: 40px 0px;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+    }
+    .section-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    footer .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+     .redes{
+        padding: 20px 0px;
+        justify-content: center;
+    }
+}
+
+/*********************************************************
+ * MEDIA QUERIES - HERO
+ *********************************************************/
+@media (max-width: 768px) {
+    .hero-video {
+        margin-top: 20px; /* Menos margen en móviles */
+    }
+}
