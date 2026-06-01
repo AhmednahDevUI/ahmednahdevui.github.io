@@ -1,18 +1,18 @@
 /*********************************************************
  * VARIABLES GLOBALES
  *********************************************************/
-:root{
+:root {
     --color-background: #e4e2e2;
     --color-backraund-blnaco: #fff;
     --color-txt-primary: #000000;
     --color-txt-secondary: #555555;
     --color-txt-resaltado: #1d4ed8;
-    --color-border:#e0e0e0;
-    --color-parafo:#00000f;
+    --color-border: #e0e0e0;
+    --color-parafo: #00000f;
     --color-capas: oklch(0.985 0.002 248.839);
     --color-tituloCapas: oklch(0.21 0.034 264.665);
-    --color-textoParafoDiv:oklch(0.446 0.03 256.802);
-    --color-redesSociales:oklch(0.373 0.034 259.733);
+    --color-textoParafoDiv: oklch(0.446 0.03 256.802);
+    --color-redesSociales: oklch(0.373 0.034 259.733);
     --color-il: #79E2E8;
     --color-il-hover: #864feb;
 
@@ -25,32 +25,47 @@
     --font-size-footer: 16px;
     --gap-4: 25rem;
 
-    --font-heading : 'Montserrat', sans-serif;
-    --font-body : 'Inter', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }
 
+/*****************************************************
+ * Prueba
+ *********************************************************/
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* ¡La magia está aquí! Corta el desborde horizontal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Asegura que los paddings no sumen tamaño extra */
+}
 /*********************************************************
  * ETIQUETAS BASE
  *********************************************************/
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-family: var(--font-body);
     font-size: var(--font-size-normal);
     color: var(--color-txt-primary);
     margin: 0;
 }
 
-h1{
+h1 {
     font-family: var(--font-heading);
     font-size: var(--font-size-X);
     font-weight: 600;
     margin-bottom: 5rem;
 }
 
-h2{
+h2 {
     margin: 0;
 }
 
@@ -64,23 +79,24 @@ h2{
     width: 100%;
     z-index: 9999;
     transition: background 0.3s ease;
-    
-    
+
+
 }
 
 
-.menu ul{
+.menu ul {
     font-family: var(--font-heading);
     color: #000000;
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 1rem;
     margin: 0;
 }
 
-.menu a{
+.menu a {
     text-decoration: none;
     color: var(--color-txt-primary);
 }
@@ -101,7 +117,7 @@ h2{
 
 .menu.scrolled {
     background: #9ff3f3;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -110,37 +126,35 @@ h2{
 /*********************************************************
  * HEADER / HERO
  *********************************************************/
-header{
+header {
     height: 100vh;
     height: auto;
 }
 
-.header{
+.header {
     padding: 96px;
 }
 
-.hero{
+.hero {
     background-color: var(--color-background);
     /*padding: 6px;*/
     border-bottom: 1px solid var(--color-border);
     position: relative;
 }
 
-.hero_degradado{
-    background: linear-gradient(
-        90deg,
-        rgba(127, 240, 236, 1) 0%,
-        rgb(226, 234, 235) 50%,
-        rgba(235, 240, 239, 1) 100%
-    );
+.hero_degradado {
+    background: linear-gradient(90deg,
+            rgba(127, 240, 236, 1) 0%,
+            rgb(226, 234, 235) 50%,
+            rgba(235, 240, 239, 1) 100%);
 }
 
-.hero::before{
+.hero::before {
     content: "{} [] <>  array";
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(0,0,0,0.1);
+    color: rgba(0, 0, 0, 0.1);
     font-family: var(--font-body);
     font-size: var(--font-size-X);
     padding: 20px;
@@ -152,7 +166,7 @@ header{
 /*********************************************************
  * CONTENEDOR GENERAL
  *********************************************************/
-.contenedor{
+.contenedor {
     align-items: center;
     margin: 0;
     padding: 96px;
@@ -164,8 +178,10 @@ header{
 .hero-content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Cambiado a center */
-    padding: 96px; /* Mantenemos tu padding */
+    align-items: center;
+    /* Cambiado a center */
+    padding: 96px;
+    /* Mantenemos tu padding */
     gap: 40px;
 }
 
@@ -178,19 +194,28 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 300px; /* Evita que el vídeo se aplaste demasiado al minimizar */
-    padding: 20px;    /* Un padding pequeño para que no toque los bordes */
-    z-index: 10;      /* Lo ponemos por encima por si algo lo tapa */
-    margin-top: 280px; /* Un margen grande para separarlo del texto */
+    min-width: 300px;
+    /* Evita que el vídeo se aplaste demasiado al minimizar */
+    padding: 20px;
+    /* Un padding pequeño para que no toque los bordes */
+    z-index: 10;
+    /* Lo ponemos por encima por si algo lo tapa */
+    margin-top: 280px;
+    /* Un margen grande para separarlo del texto */
 
 }
 
 .hero-video video {
-    width: 200%;      /* Que ocupe todo su contenedor */
-    max-width: 500px; /* Pero que no se haga gigante en pantallas 4K */
-    height: auto;     /* Mantener proporción */
-    border: 3px solid var(--color-txt-resaltado); /* Un borde*/
-    border-radius: 10px; /* Bordes redondeados para un look más suave */
+    width: 100%;
+    /* Que ocupe todo su contenedor */
+    max-width: 500px;
+    /* Pero que no se haga gigante en pantallas 4K */
+    height: auto;
+    /* Mantener proporción */
+    border: 3px solid var(--color-txt-resaltado);
+    /* Un borde*/
+    border-radius: 10px;
+    /* Bordes redondeados para un look más suave */
 }
 
 
@@ -199,22 +224,22 @@ header{
  *********************************************************/
 
 
-.resaltado{
-    color : var(--color-txt-resaltado);
-    font-size : var(--font-size-x);
+.resaltado {
+    color: var(--color-txt-resaltado);
+    font-size: var(--font-size-X);
 }
 
 /*********************************************************
  * TEXTOS DEL HERO
  *********************************************************/
-.hello{
+.hello {
     font-family: var(--font-heading);
     font-size: var(--font-size-M);
     margin-bottom: 50px;
     font-weight: 600;
 }
 
-.job-title{
+.job-title {
     font-family: var(--font-heading);
     color: var(--color-txt-secondary);
     font-weight: 500;
@@ -241,16 +266,17 @@ header{
     transition: 0.2s;
 }
 
-.redes a:hover img{
-   transform: scale(1.15) rotate(15deg);
-    
-    opacity: 1; /* Se vuelve totalmente opaco */
-    
+.redes a:hover img {
+    transform: scale(1.15) rotate(15deg);
+
+    opacity: 1;
+    /* Se vuelve totalmente opaco */
+
     /* Opcional: añade una sombra suave para dar profundidad */
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
     /* Opcional: cambia el color del ícono al pasar el mouse */
     filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
-    
+
 }
 
 
@@ -265,36 +291,37 @@ header{
         opacity: 0;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.hello{
+.hello {
     animation: animacion 1s ease forwards;
 }
 
-.job-title{
+.job-title {
     animation: animacion 1s ease forwards;
     animation-delay: 0.5s;
     opacity: 0;
     font-size: var(--font_size-S);
 }
 
-h1{
+h1 {
     animation: animacion 1s ease forwards;
     animation-delay: 1s;
     opacity: 0;
 }
 
-.redes{
+.redes {
     animation: animacion 2s ease forwards;
     animation-delay: 1s;
     opacity: 0;
 }
 
-.hero-video video{
+.hero-video video {
     animation: animacion 1s ease forwards;
     animation-delay: 1.5s;
     opacity: 0;
@@ -303,11 +330,11 @@ h1{
 /*********************************************************
  * SECCIONES REUTILIZABLES
  *********************************************************/
-.section{
-   padding: 96px;
-    }
+.section {
+    padding: 96px;
+}
 
-.section-container{
+.section-container {
     display: grid;
     grid-template-columns: 25% 1fr;
     gap: 20rem;
@@ -316,7 +343,7 @@ h1{
     padding: 0.2rem;
 }
 
-.section-title h2{
+.section-title h2 {
     font-family: var(--font-heading);
     font-size: 72px;
     margin-bottom: 0.2rem;
@@ -327,7 +354,7 @@ h1{
     max-width: 100px;
 }
 
-.capasDerecha{
+.capasDerecha {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -336,24 +363,25 @@ h1{
 /*********************************************************
  * CONTENIDO DE SECCIÓN
  *********************************************************/
-.section-content{
+.section-content {
     background-color: var(--color-capas);
     border: 1px solid var(--color-border);
     border-radius: 1rem;
     padding: 32px;
 }
 
-.section-content:hover{
-    box-shadow: 17px 11px 5px 4px rgba(0,0,0,0.59);
+.section-content:hover {
+    box-shadow: 17px 11px 5px 4px rgba(0, 0, 0, 0.59);
     transform: translate(5px, 15px);
 }
 
-.section-content p{
+.section-content p {
     color: var(--color-parafo);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
-p.parafoCapa{
+
+p.parafoCapa {
     color: var(--color-textoParafoDiv);
     font-size: var(--font_size-xs);
     font-family: var(--font-heading);
@@ -364,7 +392,7 @@ p.parafoCapa{
 /*********************************************************
  * PROYECTOS
  *********************************************************/
-.divProyecto{
+.divProyecto {
     display: flex;
     background-color: var(--color-txt-primary);
     border: var(--color-tituloCapas) 1px solid;
@@ -374,17 +402,19 @@ p.parafoCapa{
     gap: 0.5rem;
     margin-top: 0.5rem;
 }
-.enlaceProyecto{
+
+.enlaceProyecto {
     display: flex;
     color: var(--color-backraund-blnaco);
     align-items: center;
     justify-content: center;
     text-decoration: none;
 }
+
 /*********************************************************
  * SKILLS
  *********************************************************/
-.skills{
+.skills {
     display: flex;
     gap: 1rem;
     list-style: none;
@@ -392,7 +422,7 @@ p.parafoCapa{
     font-size: var(--font_size-xs);
 }
 
-.skills li{
+.skills li {
     font-family: var(--font-heading);
     font-size: 14px;
     background-color: var(--color-il);
@@ -401,17 +431,17 @@ p.parafoCapa{
     padding: 0.5rem 1rem;
 }
 
-.skills li:hover{
+.skills li:hover {
     background-color: var(--color-txt-resaltado);
     cursor: pointer;
     color: var(--color-backraund-blnaco);
-    
+
 }
 
 /*********************************************************
  * EXPERIENCIA LABORAL
  *********************************************************/
-div.cabeceraCapa{
+div.cabeceraCapa {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 2rem;
@@ -420,7 +450,7 @@ div.cabeceraCapa{
     margin-bottom: 0.2rem;
 }
 
-h3.titloCapa{
+h3.titloCapa {
     font-family: var(--font-heading);
     font-size: var(--font_size-S);
     color: var(--color-tituloCapas);
@@ -429,7 +459,7 @@ h3.titloCapa{
     margin: 0;
 }
 
-p.tituloAzul{
+p.tituloAzul {
     font-family: var(--font-heading);
     font-size: var(--font_size-xs);
     color: var(--color-txt-resaltado);
@@ -442,7 +472,7 @@ p.tituloAzul{
 /***********************************************************
  * DETALLES EXPERIENCIA LABORAL
  *********************************************************/
-div.timeCapa{
+div.timeCapa {
     font-family: var(--font-heading);
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -452,24 +482,26 @@ div.timeCapa{
     color: var(--color-txt-secondary);
 }
 
-ul.textoCapasUl{
+ul.textoCapasUl {
     color: var(--color-textoParafoDiv);
     font-family: var(--font-heading);
     font-size: var(--font_size-xs);
     padding-left: 1.5rem;
 }
-ul.textoCapasUl li{
+
+ul.textoCapasUl li {
     margin-bottom: 0.8rem;
 }
 
 /*********************************************************
  * Footer
  *********************************************************/
-.footer{
-background-color: var(--color-capas);
+.footer {
+    background-color: var(--color-capas);
     border-top: 1px solid var(--color-border);
 }
-.footer-content{
+
+.footer-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10rem;
@@ -486,23 +518,27 @@ background-color: var(--color-capas);
     color: var(--color-tituloCapas);
     margin: 0;
 }
+
 .footer-content {
+    justify-items: center;
+    padding: 48px 32px;
+    padding-left: 126.5px;
     color: var(--color-textoParafoDiv);
     font-family: var(--font-heading);
     font-size: var(--font-size-footer);
     margin: 0;
-    
+
 }
 
 
-.parafo-footer{
-     font-family: var(--font-heading);
+.parafo-footer {
+    font-family: var(--font-heading);
     font-size: var(--font-size-footer);
     color: var(--color-textoParafoDiv);
     margin-top: 8px;
 }
 
-.parafo2-footer{
+.parafo2-footer {
     font-family: var(--font-heading);
     font-size: 14px;
     color: var(--color-textoParafoDiv);
@@ -513,26 +549,27 @@ background-color: var(--color-capas);
 /*********************************************************
  * Menu footer
  **********************************************************/
-.menu-footer ul{
+.menu-footer ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 30px;
     text-align: center;
     padding: 0;
     margin: 0;
 }
-.menu-footer li{
+
+.menu-footer li {
     font-family: var(--font-heading);
     font-size: 14px;
     color: var(--color-textoParafoDiv);
 }
 
-.menu-footer a{
+.menu-footer a {
     text-decoration: none;
 }
 
-.menu-footer li:hover{
-   /**cambia el color del enlace al pasar el mouse */
+.menu-footer li:hover {
+    /**cambia el color del enlace al pasar el mouse */
     color: var(--color-txt-resaltado);
 }
 
@@ -544,13 +581,14 @@ background-color: var(--color-capas);
 .redes-footer {
     position: relative;
     display: flex;
+    justify-content: center;
     gap: 30px;
     color: var(--color-txt-primary);
     padding: 0;
     margin: 20px 0px 0px 0px;
 }
 
-.redes-footer img{
+.redes-footer img {
     color: var(--color-txt-primary);
 }
 
@@ -563,7 +601,7 @@ background-color: var(--color-capas);
 /*********************************************************
  * Resaltados
  *********************************************************/
-.Rpro{
+.Rpro {
     font-weight: bold;
     color: var(--color-txt-resaltado);
 }
@@ -574,10 +612,14 @@ background-color: var(--color-capas);
 
 .boton-modo-oscuro {
     position: absolute;
-    left: 20px;         /* Un pelín más de aire desde la izquierda */
-    top: 50%;           /* Lo mandamos a la mitad */
-    transform: translateY(-50%); /* El truco real para el centrado vertical */
-    z-index: 10001;     /* Aseguramos que esté por encima de todo */
+    left: 5px;
+    /* Un pelín más de aire desde la izquierda */
+    top: 50%;
+    /* Lo mandamos a la mitad */
+    transform: translateY(-50%);
+    /* El truco real para el centrado vertical */
+    z-index: 10001;
+    /* Aseguramos que esté por encima de todo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -592,8 +634,8 @@ background-color: var(--color-capas);
 /*****************************************************
  * MODO OSCURO
  *********************************************************/
- /***VARIABLES MODO OSCURO***/
- :root {
+/***VARIABLES MODO OSCURO***/
+:root {
     --color-background-dark: #0f172a;
     --color-txt-primary-dark: #e0e0e0;
     --color-txt-secondary-dark: #aaaaaa;
@@ -615,14 +657,13 @@ Body.dark-mode {
     color: var(--color-txt-primary-dark);
     font-family: var(--font-darkMode-body);
 }
+
 /**Modo degradado para el hero en modo oscuro*/
 body.dark-mode .hero_degradado {
-    background: linear-gradient(
-        90deg,
-        rgba(15, 23, 42, 1) 0%,
-        rgb(17, 23, 32) 50%,
-        rgba(17, 23, 32, 1) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(15, 23, 42, 1) 0%,
+            rgb(17, 23, 32) 50%,
+            rgba(17, 23, 32, 1) 100%);
 }
 
 /***Menu overlay en modo oscuro***/
@@ -630,13 +671,14 @@ body.dark-mode .menu--overlay {
     background: rgba(248, 247, 247, 0.1);
 }
 
-body.dark-mode .menu{
-        /* Un fondo blanco pero casi totalmente transparente (0.05 de opacidad) */
-    background-color: rgba(255, 255, 255, 0.05); 
-    
+body.dark-mode .menu {
+    /* Un fondo blanco pero casi totalmente transparente (0.05 de opacidad) */
+    background-color: rgba(255, 255, 255, 0.05);
+
     /* El truco mágico: desenfoca lo que pasa por detrás */
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px); /* Para soporte en Safari */
+    -webkit-backdrop-filter: blur(12px);
+    /* Para soporte en Safari */
 }
 
 body.dark-mode .menu ul li a {
@@ -653,53 +695,63 @@ body.dark-mode .menu ul li a:hover {
 body.dark-mode .job-title {
     color: var(--color-txt-secondary-dark);
 }
+
 /***Color de redes sociales en modo oscuro***/
 body.dark-mode .redes a img {
     filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
 }
+
 /***Hover de las redes sociales en modo oscuro en blanco***/
 body.dark-mode .redes a:hover img {
     filter: invert(86%) sepia(35%) saturate(702%) hue-rotate(135deg) brightness(97%) contrast(92%);
 }
+
 /***Sección de capas en modo oscuro***/
 body.dark-mode .section-content {
     background-color: var(--color-capas-dark);
     border: 1px solid var(--color-txt-resaltado);
 }
+
 /**Cmbiar el titulo de las capas en modo oscuro***/
 body.dark-mode h3.titloCapa {
     color: var(--color-tituloCapas-dark);
 }
+
 /***cambiar el texto de las capas en modo oscuro***/
 body.dark-mode .parafoCapa {
     color: var(--color-textoParafoDiv-dark);
 }
+
 /***Cambiar el coloer de las skills en modo oscuro***/
 body.dark-mode .skills li {
     background-color: var(--color-txt-resaltado);
     border: 1px solid var(--color-border);
     color: var(--color-backraund-blnaco);
 }
+
 /**Hover de las skills en modo oscuro***/
 body.dark-mode .skills li:hover {
     background-color: var(--color-txt-resaltado-dark);
     color: #000000;
     border: 1px solid var(--color-txt-resaltado);
 }
+
 /***Cambiar el fondo del divProyecto en modo oscuro***/
 body.dark-mode .divProyecto {
     background-color: var(--color-txt-resaltado);
 }
+
 body.dark-mode .divProyecto:hover {
     background-color: var(--color-il-hover);
     transform: scale(1.15) rotate(5deg) translateY(-10px);
-    
+
 }
 
 /**Cmabiar el timepo de las capas en modo oscuro***/
 body.dark-mode .timeCapa p {
     color: var(--color-txt-resaltado);
 }
+
 /***Cmbiar el texto de txtocapaUl en modo oscuro***/
 body.dark-mode ul.textoCapasUl {
     color: var(--color-textoParafoDiv-dark);
@@ -710,18 +762,22 @@ body.dark-mode .footer {
     background-color: var(--color-capas-dark);
     border-top: 1px solid var(--color-border-dark);
 }
+
 /**cambiar color del titulo del footer en modo oscuro***/
 body.dark-mode .titulo-footer {
     color: var(--color-tituloCapas-dark);
 }
+
 /**cambiar el color del parafo del footer en modo oscuro***/
 body.dark-mode .parafo-footer {
     color: var(--color-textoParafoDiv-dark);
 }
+
 /**Cambiar el coloer de las redes sociales del footer en modo oscuro***/
 body.dark-mode .redes-footer a {
     filter: invert(24%) sepia(91%) saturate(2355%) hue-rotate(213deg) brightness(96%) contrast(106%);
 }
+
 /***Hover de las redes sociales del footer en modo oscuro***/
 body.dark-mode .redes-footer a:hover {
     filter: invert(86%) sepia(35%) saturate(702%) hue-rotate(135deg) brightness(97%) contrast(92%);
@@ -731,16 +787,17 @@ body.dark-mode .redes-footer a:hover {
 body.dark-mode .menu-footer li {
     color: var(--color-textoParafoDiv-dark);
 }
+
 /**Hover del menu del footer en modo oscuro***/
 body.dark-mode .menu-footer li:hover {
     color: var(--color-txt-resaltado);
 }
+
 /*Cambiar el coloer del parafo2-footer en modo oscuro*/
-body.dark-mode .parafo2-footer {
-    
-}
+/* body.dark-mode .parafo2-footer {} */
+
 /**Cambiar el fondo del boton de modo oscuro en modo oscuro (sí, es un poco meta)*/
-body.dark-mode .boton-modo-oscuro  {
+body.dark-mode .boton-modo-oscuro {
     background-color: var(--color-il-hover);
     border: 2px solid var(--color-il-hover);
     color: var(--color-backraund-blnaco);
@@ -749,59 +806,244 @@ body.dark-mode .boton-modo-oscuro  {
 
 
 /*********************************************************
- * MEDIA QUERIES
+ * MEDIA QUERIES (CORREGIDAS)
  *********************************************************/
 @media (max-width: 1024px) {
-    .contenedor {
-        padding: 48px;
+    /* Bajamos el tamaño del título gigante para que no rompa el layout */
+    h1 {
+        font-size: 40px; 
     }
+    
+    .resaltado {
+        font-size: 40px;
+    }
+
+    .hello {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    /* Reducimos los paddings salvajes de escritorio */
+    .contenedor, .header, .hero-content, .section {
+        padding: 40px 24px;
+    }
+
     .section-container {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 3rem;
     }
 
     .hero-content {
-        flex-direction: column; /* El vídeo se va debajo del texto */
+        flex-direction: column;
         text-align: center;
-        padding: 40px 20px;    /* Reducimos paddings laterales */
     }
 
     .hero-video {
-        margin-top: 20px;      /* Un margen pequeño para separarlo del texto */
+        margin-top: 20px;
         width: 100%;
     }
 
-    div.redes{
-        padding: 40px 0px;
+    div.redes {
+        padding: 30px 0px;
         justify-content: center;
     }
-    
 }
 
 @media (max-width: 768px) {
-    .contenedor {
-        padding: 20px;
+    /* Ajustes para móviles estándar */
+    h1, .resaltado {
+        font-size: 32px;
     }
+
+    .contenedor, .header, .hero-content, .section {
+        padding: 30px 16px; /* Padding pequeñito para pantallas chicas */
+    }
+
     .section-container {
-        grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     footer .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        margin: 0;
+        padding: 30px 16px;
     }
-     .redes{
+
+    .redes {
         padding: 20px 0px;
-        justify-content: center;
+        gap: 20px;
+    }
+    
+    /* El menú responsive básico */
+    .menu ul {
+        gap: 15px;
+        font-size: 16px;
+    }
+}
+
+/*** Media query para pantallas mini (como la de tu prueba de 400px) ***/
+@media (max-width: 600px) {
+    h1, .resaltado {
+        font-size: 28px; /* Ahora sí va a caber "Ahmednah" sin salirse */
+    }
+
+    .hero-content {
+        padding: 20px 10px;
+    }
+
+    .hero-video {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .hero-video video {
+        width: 100%; /* Corregido el 200% que tenías arriba, que lo gigantizaba */
     }
 }
 
 /*********************************************************
- * MEDIA QUERIES - HERO
+ * MEDIA QUERIES UNIFICADAS Y RESPONSIVE (MÓVIL Y TABLET)
  *********************************************************/
 @media (max-width: 768px) {
+    
+    /* 1. Reset general de contenedores para ocupar todo el ancho real */
+    .contenedor, 
+    .header, 
+    .section,
+    .hero {
+        padding: 30px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .header {
+        margin: 0 !important;
+    }
+
+    /* 2. Corrección del layout del Hero (Texto + Video) */
+    .hero-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px 0 !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    .hero-text {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Eliminamos el margen gigante de 280px que empujaba el vídeo */
     .hero-video {
-        margin-top: 20px; /* Menos margen en móviles */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 20px !important; 
+        padding: 0 !important;
+        justify-content: center !important;
+    }
+
+    /* Forzamos al vídeo a que no se desborde ni se quede enano */
+    .hero-video video {
+        width: 100% !important;
+        max-width: 450px !important;
+        height: auto !important;
+    }
+
+    /* 3. Reajuste de Tipografías para que no rompan la pantalla */
+    h1 {
+        font-size: 32px !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .resaltado {
+        font-size: 34px !important;
+    }
+
+    .hello {
+        font-size: 26px !important;
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+
+    .job-title {
+        font-size: 18px !important;
+        text-align: center !important;
+    }
+
+    /* 4. Menú de navegación fluido */
+    .menu ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+
+    .menu a {
+        font-size: 14px !important;
+    }
+
+    /* 5. Secciones de contenido ("Sobre mí", "Proyectos") al 100% */
+    .section-container {
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        gap: 2rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .section-title h2 {
+        font-size: 42px !important; /* Reducimos los 72px de escritorio */
+        max-width: 100% !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        display: inline-block !important;
+    }
+
+    .capasDerecha {
+        width: 100% !important;
+    }
+
+    .section-content {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 20px !important;
+    }
+
+    /* 6. Ajuste de las etiquetas de Skills para que no se corten */
+    .skills {
+        flex-wrap: wrap !important; /* Si no caben, bajan de línea */
+        gap: 8px !important;
+        padding: 5px 0 !important;
+    }
+
+    .skills li {
+        font-size: 12px !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+
+    /* Redes Sociales centradas */
+    .redes {
+        padding: 20px 0px !important;
+        justify-content: center !important;
+        gap: 30px !important;
+    }
+
+    /***Boton de modo oscuro centrado en móvil***/
+    .boton-modo-oscuro {
+        padding: 2px 3px !important;
+}
+
+/* Ajuste extra para móviles muy pequeños (ej. pantallas de 400px o menos) */
+@media (max-width: 450px) {
+    h1, .resaltado {
+        font-size: 26px !important;
+    }
+    
+    .section-title h2 {
+        font-size: 32px !important;
     }
 }

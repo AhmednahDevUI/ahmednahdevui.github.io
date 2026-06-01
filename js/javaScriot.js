@@ -33,8 +33,8 @@ toggle.addEventListener('click', () => {
 		//Interuptor on/of
 		encendido = !encendido;
 		autor.style.transition = "color 0.35s ease";
-		autor.style.color = encendido ? "#100cf7" : "oklch(0.446 0.03 256.802)";
+		autor.style.color = encendido ? "#864feb" : "oklch(0.446 0.03 256.802)";
 	}, 1200);
-   }
+    }
 
 
