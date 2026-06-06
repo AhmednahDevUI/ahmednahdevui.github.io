@@ -552,7 +552,7 @@ ul.textoCapasUl li {
 .menu-footer ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 24px;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -978,7 +978,7 @@ body.dark-mode .boton-modo-oscuro {
     /* 4. Menú de navegación fluido */
     .menu ul {
         flex-wrap: wrap !important;
-        justify-content: center !important;
+        justify-content: right !important;
         gap: 10px !important;
         padding: 10px !important;
     }
