@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+    ============================================================
+    CÓMO EDITAR ESTE PORTFOLIO
+    ------------------------------------------------------------
+    · Cada texto aparece dos veces, uno al lado del otro:
+        <span lang="es">Texto en español</span>
+        <span lang="en">Text in English</span>
+      Cambia los dos. El botón ES/EN muestra uno u otro.
+    · Imágenes  → carpeta img/
+    · Vídeos    → carpeta videos/
+    · Estilos   → css/estilo.css  (colores al principio, en :root)
+    · Scripts   → js/javaScriot.js
+    ============================================================
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= SEO ================= -->
+    <title data-es-text="Ahmednah Mohamed Saleh — Desarrollador web full-stack"
+        data-en-text="Ahmednah Mohamed Saleh — Full-stack web developer">Ahmednah Mohamed Saleh — Desarrollador web full-stack</title>
+    <meta name="description"
+        data-es-content="Portfolio de Ahmednah Mohamed Saleh, desarrollador web full-stack y co-creador de la agencia DigitalZyra. Proyectos, experiencia, formación y contacto."
+        data-en-content="Portfolio of Ahmednah Mohamed Saleh, full-stack web developer and co-creator of the DigitalZyra agency. Projects, experience, education and contact."
+        content="Portfolio de Ahmednah Mohamed Saleh, desarrollador web full-stack y co-creador de la agencia DigitalZyra. Proyectos, experiencia, formación y contacto.">
+    <meta name="author" content="Ahmednah Mohamed Saleh">
+    <link rel="canonical" href="https://ahmednahdevui.github.io/">
+    <meta name="theme-color" content="#f5f3ef" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0f" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph (vista previa al compartir en LinkedIn, WhatsApp, X...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ahmednahdevui.github.io/">
+    <meta property="og:title" content="Ahmednah Mohamed Saleh — Desarrollador web full-stack">
+    <meta property="og:description" content="Diseño y construyo productos digitales que funcionan de verdad. Co-creador de DigitalZyra.">
+    <meta property="og:image" content="https://ahmednahdevui.github.io/img/og-ahmednah.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AhmednahDevUI">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <!-- Imagen principal: se precarga para que el hero aparezca rápido -->
+    <link rel="preload" as="image" href="img/foto-ahmednah-recorte-800.webp" type="image/webp"
+        imagesrcset="img/foto-ahmednah-recorte-480.webp 480w, img/foto-ahmednah-recorte-800.webp 800w" imagesizes="(max-width: 900px) 90vw, 34vw">
+
+    <!-- Idioma guardado (se aplica antes de pintar para evitar parpadeos) -->
+    <script>
+        (function () {
+            var l = null;
+            try { l = localStorage.getItem('idioma'); } catch (e) { }
+            if (!l) l = (navigator.language || 'es').slice(0, 2) === 'en' ? 'en' : 'es';
+            document.documentElement.lang = l;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <!-- Datos estructurados para buscadores -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ahmednah Mohamed Saleh",
+        "url": "https://ahmednahdevui.github.io/",
+        "image": "https://ahmednahdevui.github.io/img/foto-ahmednah.jpg",
+        "jobTitle": "Desarrollador web full-stack",
+        "email": "mailto:ahmednahdesarrollador@gmail.com",
+        "memberOf": { "@type": "Organization", "name": "DigitalZyra", "url": "https://digitalzyra.com/" },
+        "sameAs": [
+            "https://www.linkedin.com/in/ahmednah-mohamed-saleh-87361a36b",
+            "https://github.com/AhmednahDevUI",
+            "https://x.com/AhmednahDevUI"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Modo oscuro guardado (antes de pintar la página) -->
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('tema'); } catch (e) { }
+            if (t === 'oscuro' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
+
+    <!-- Iconos (se reutilizan con <use href="#i-...">) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .31.21.69.82.57A12 12 0 0 0 12 .3"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.63 7.58H.47l8.6-9.83L0 1.15h7.59l5.25 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+        <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">
+        <span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span>
+    </a>
+
+    <!-- ================= NAV ================= -->
+    <nav class="menu menu--top" aria-label="Principal" data-es-aria-label="Principal" data-en-aria-label="Main">
+        <div class="navbar">
+
+            <a class="marca" href="#header" aria-label="Ahmednah Mohamed Saleh — inicio">
+                <img src="img/favicon.svg" alt="" width="32" height="32">
+                <span class="marca-nombre">Ahmednah</span>
+            </a>
+
+            <ul id="nav-links">
+                <li><a href="#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+                <li><a href="#project"><span lang="es">Proyectos</span><span lang="en">Work</span></a></li>
+                <li><a href="#experience"><span lang="es">Experiencia</span><span lang="en">Experience</span></a></li>
+                <li><a href="#education"><span lang="es">Formación</span><span lang="en">Education</span></a></li>
+                <li><a href="#contact"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+            </ul>
+
+            <div class="nav-acciones">
+                <!-- ================= botón idioma ================= -->
+                <button id="btn-idioma" class="boton-nav boton-idioma" type="button"
+                    data-es-aria-label="Cambiar idioma a inglés" data-en-aria-label="Switch language to Spanish"
+                    aria-label="Cambiar idioma a inglés">
+                    <span class="idioma-es">ES</span><span class="idioma-sep">/</span><span class="idioma-en">EN</span>
+                </button>
+
+                <!-- ================= botón modo oscuro ================= -->
+                <button id="btn-dark-mode" class="boton-nav boton-modo-oscuro" type="button" aria-pressed="false"
+                    data-es-aria-label="Activar o desactivar modo oscuro" data-en-aria-label="Toggle dark mode"
+                    aria-label="Activar o desactivar modo oscuro">
+                    <svg class="icono-luna" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+                    <svg class="icono-sol" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+                </button>
+
+                <!-- ================= botón menú (móvil) ================= -->
+                <button class="boton-nav menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"
+                    data-es-aria-label="Abrir menú" data-en-aria-label="Open menu" aria-label="Abrir menú">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header id="header" class="hero">
+        <div class="contenedor hero-content">
+
+            <!-- IZQUIERDA -->
+            <div class="hero-txto">
+                <p class="hello etiqueta">
+                    <span class="punto-vivo" aria-hidden="true"></span>
+                    <span lang="es">Desarrollador web full-stack</span>
+                    <span lang="en">Full-stack web developer</span>
+                </p>
+
+                <h1>
+                    <span class="h1-linea">Ahmednah</span>
+                    <span class="h1-linea">Mohamed <em class="resaltado">Saleh</em></span>
+                </h1>
+
+                <p class="job-title">
+                    <span lang="es">Diseño y construyo productos digitales que <em>funcionan de verdad.</em></span>
+                    <span lang="en">I design and build digital products that <em>actually work.</em></span>
+                </p>
+
+                <p class="hero-intro" lang="es">
+                    Del hardware al producto: vengo del soporte técnico y la administración de sistemas, y hoy
+                    desarrollo webs y software de principio a fin. Co-creador de la agencia
+                    <a href="#digitalzyra">DigitalZyra</a>.
+                </p>
+                <p class="hero-intro" lang="en">
+                    From hardware to product: I come from IT support and systems administration, and today I build
+                    websites and software end to end. Co-creator of the
+                    <a href="#digitalzyra">DigitalZyra</a> agency.
+                </p>
+
+                <div class="hero-cta">
+                    <a class="boton boton--primario" href="#project">
+                        <span lang="es">Ver proyectos</span><span lang="en">See my work</span>
+                        <svg width="18" height="18" aria-hidden="true"><use href="#i-down"/></svg>
+                    </a>
+                    <a class="boton boton--secundario" href="#contact">
+                        <span lang="es">Contactar</span><span lang="en">Get in touch</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DERECHA: FOTO (recortada, sobresale del bloque de color) -->
+            <figure class="hero-foto">
+                <div class="foto-escena">
+                    <div class="foto-fondo" aria-hidden="true">
+                        <span class="foto-monograma">AM</span>
+                    </div>
+                    <!-- Para cambiar la foto: sustituye img/foto-ahmednah-recorte-800.webp y -480.webp (PNG/WebP con fondo transparente) -->
+                    <img class="foto-persona" src="img/foto-ahmednah-recorte-800.webp"
+                        srcset="img/foto-ahmednah-recorte-480.webp 480w, img/foto-ahmednah-recorte-800.webp 800w"
+                        sizes="(max-width: 900px) 90vw, 34vw" width="800" height="1000" fetchpriority="high"
+                        alt="Retrato de Ahmednah Mohamed Saleh"
+                        data-es-alt="Retrato de Ahmednah Mohamed Saleh"
+                        data-en-alt="Portrait of Ahmednah Mohamed Saleh">
+                </div>
+                <a class="foto-chip" href="#digitalzyra">
+                    <span class="foto-chip-logo" aria-hidden="true">Z</span>
+                    <span>
+                        <span lang="es">Co-creador de</span><span lang="en">Co-creator of</span>
+                        <strong>DigitalZyra</strong>
+                    </span>
+                </a>
+            </figure>
+        </div>
+
+        <!-- Datos rápidos -->
+        <div class="contenedor">
+            <dl class="hero-datos">
+                <div>
+                    <dt class="etiqueta"><span lang="es">Rol</span><span lang="en">Role</span></dt>
+                    <dd><span lang="es">Frontend + Backend</span><span lang="en">Frontend + Backend</span></dd>
+                </div>
+                <div>
+                    <dt class="etiqueta"><span lang="es">Ahora</span><span lang="en">Now</span></dt>
+                    <dd><span lang="es">Construyendo DigitalZyra</span><span lang="en">Building DigitalZyra</span></dd>
+                </div>
+                <div>
+                    <dt class="etiqueta"><span lang="es">Formación</span><span lang="en">Education</span></dt>
+                    <dd>FP DAW · FP SMR</dd>
+                </div>
+                <div>
+                    <dt class="etiqueta"><span lang="es">En tecnología</span><span lang="en">In tech</span></dt>
+                    <dd><span lang="es">Desde 2021</span><span lang="en">Since 2021</span></dd>
+                </div>
+            </dl>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="section">
+            <div class="contenedor">
+
+                <div class="section-title reveal">
+                    <p class="etiqueta"><span class="num">01</span>
+                        <span lang="es">Sobre mí</span><span lang="en">About</span></p>
+                    <h2 lang="es">Empecé reparando equipos y manteniendo servidores. Hoy construyo <em>el software que funciona encima.</em></h2>
+                    <h2 lang="en">I started out repairing computers and maintaining servers. Today I build <em>the software that runs on top.</em></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="section-content reveal">
+                        <p class="parafoCapa" lang="es">
+                            Soy desarrollador web full-stack y me apasiona crear soluciones digitales que sean tan
+                            funcionales como atractivas. Mi base en sistemas —soporte técnico, administración de
+                            servidores, redes y mantenimiento de equipos— me da una visión completa de cómo funciona la
+                            tecnología, desde la máquina hasta la interfaz.
+                        </p>
+                        <p class="parafoCapa" lang="en">
+                            I'm a full-stack web developer who loves building digital solutions that are as functional
+                            as they are good-looking. My background in systems —IT support, server administration,
+                            networking and hardware maintenance— gives me a complete picture of how technology works,
+                            from the machine to the interface.
+                        </p>
+                        <p class="parafoCapa" lang="es">
+                            Me considero una persona ambiciosa, disfruto del trabajo en equipo y siempre estoy dispuesto a
+                            asumir nuevos retos. Me gusta resolver problemas con sentido práctico: entender qué se
+                            necesita de verdad y construir una solución clara, rápida y fácil de mantener.
+                        </p>
+                        <p class="parafoCapa" lang="en">
+                            I'm ambitious, I enjoy working in a team and I'm always up for a new challenge. I like to
+                            solve problems pragmatically: understand what is really needed and build a solution that is
+                            clear, fast and easy to maintain.
+                        </p>
+                    </div>
+
+                    <div class="about-lado reveal">
+                        <p class="etiqueta"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></p>
+                        <ul class="skills">
+                            <li><span lang="es">Comunicación efectiva</span><span lang="en">Clear communication</span></li>
+                            <li><span lang="es">Adaptabilidad</span><span lang="en">Adaptability</span></li>
+                            <li><span lang="es">Trabajo en equipo</span><span lang="en">Teamwork</span></li>
+                            <li><span lang="es">Diseño y creatividad</span><span lang="en">Design &amp; creativity</span></li>
+                            <li><span lang="es">Aprendizaje continuo</span><span lang="en">Continuous learning</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ================= CAPACIDADES ================= -->
+                <div id="capacidades" class="capacidades">
+                    <div class="section-title reveal">
+                        <p class="etiqueta"><span class="num">02</span>
+                            <span lang="es">Capacidades</span><span lang="en">Capabilities</span></p>
+                    </div>
+
+                    <ol class="cap-lista">
+                        <li class="cap reveal">
+                            <span class="cap-num">01</span>
+                            <h3 class="cap-titulo">Frontend</h3>
+                            <p class="cap-texto" lang="es">Interfaces responsive, accesibles y cuidadas al detalle.</p>
+                            <p class="cap-texto" lang="en">Responsive, accessible interfaces crafted down to the detail.</p>
+                            <p class="cap-tools">HTML · CSS · JavaScript · Git</p>
+                        </li>
+                        <li class="cap reveal">
+                            <span class="cap-num">02</span>
+                            <h3 class="cap-titulo">Backend</h3>
+                            <p class="cap-texto" lang="es">Aplicaciones con arquitectura MVC y lógica de negocio ordenada.</p>
+                            <p class="cap-texto" lang="en">Applications with MVC architecture and well-organised business logic.</p>
+                            <p class="cap-tools">Java · Servlets · JSP · PHP</p>
+                        </li>
+                        <li class="cap reveal">
+                            <span class="cap-num">03</span>
+                            <h3 class="cap-titulo"><span lang="es">Bases de datos</span><span lang="en">Databases</span></h3>
+                            <p class="cap-texto" lang="es">Modelado y acceso a datos para aplicaciones reales.</p>
+                            <p class="cap-texto" lang="en">Data modelling and data access for real applications.</p>
+                            <p class="cap-tools">SQL · MySQL</p>
+                        </li>
+                        <li class="cap reveal">
+                            <span class="cap-num">04</span>
+                            <h3 class="cap-titulo"><span lang="es">Sistemas y redes</span><span lang="en">Systems &amp; networks</span></h3>
+                            <p class="cap-texto" lang="es">Administración de sistemas y servidores, redes locales, hardware y soporte.</p>
+                            <p class="cap-texto" lang="en">Systems and server administration, local networks, hardware and support.</p>
+                            <p class="cap-tools"><span lang="es">Servidores · Redes · Seguridad · Copias</span><span lang="en">Servers · Networks · Security · Backups</span></p>
+                        </li>
+                        <li class="cap reveal">
+                            <span class="cap-num">05</span>
+                            <h3 class="cap-titulo"><span lang="es">Diseño y experiencia</span><span lang="en">Design &amp; UX</span></h3>
+                            <p class="cap-texto" lang="es">Mirada de producto: que cada pantalla sea clara y fácil de usar.</p>
+                            <p class="cap-texto" lang="en">A product mindset: every screen clear and easy to use.</p>
+                            <p class="cap-tools">UI · UX · <span lang="es">Diseño responsive</span><span lang="en">Responsive design</span></p>
+                        </li>
+                        <li class="cap reveal">
+                            <span class="cap-num">06</span>
+                            <h3 class="cap-titulo"><span lang="es">Automatización e IA</span><span lang="en">Automation &amp; AI</span></h3>
+                            <p class="cap-texto" lang="es">Flujos automáticos y agentes de IA para negocios, dentro de DigitalZyra.</p>
+                            <p class="cap-texto" lang="en">Automated workflows and AI agents for businesses, at DigitalZyra.</p>
+                            <p class="cap-tools"><span lang="es">Automatización · Agentes de IA</span><span lang="en">Automation · AI agents</span></p>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PROJECT (índice de proyectos) ================= -->
+        <section id="project" class="section section--proyectos">
+            <div class="contenedor">
+                <div class="section-title reveal">
+                    <p class="etiqueta"><span class="num">03</span>
+                        <span lang="es">Proyectos</span><span lang="en">Selected work</span></p>
+                    <h2 lang="es">Proyectos reales, <em>de la idea a producción.</em></h2>
+                    <h2 lang="en">Real projects, <em>from idea to production.</em></h2>
+                </div>
+
+                <ul class="proyectos-indice">
+                    <li class="reveal">
+                        <a class="proyecto-fila" href="#digitalzyra">
+                            <span class="proyecto-num">01</span>
+                            <span class="proyecto-nombre">DigitalZyra</span>
+                            <span class="proyecto-meta">
+                                <span lang="es">Agencia digital · Co-creador</span>
+                                <span lang="en">Digital agency · Co-creator</span>
+                            </span>
+                            <span class="proyecto-tipo etiqueta">Case study</span>
+                            <svg class="proyecto-flecha" width="28" height="28" aria-hidden="true"><use href="#i-down"/></svg>
+                        </a>
+                    </li>
+                    <li class="reveal">
+                        <a class="proyecto-fila" href="#rutinapro">
+                            <span class="proyecto-num">02</span>
+                            <span class="proyecto-nombre">RutinaPro</span>
+                            <span class="proyecto-meta">
+                                <span lang="es">Aplicación web · Java MVC</span>
+                                <span lang="en">Web application · Java MVC</span>
+                            </span>
+                            <span class="proyecto-tipo etiqueta"><span lang="es">Proyecto técnico</span><span lang="en">Technical project</span></span>
+                            <svg class="proyecto-flecha" width="28" height="28" aria-hidden="true"><use href="#i-down"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= DIGITALZYRA — CASE STUDY ================= -->
+        <!-- Enlace de la web: busca "https://digitalzyra.com/" -->
+        <section id="digitalzyra" class="zyra" aria-labelledby="zyra-titulo">
+            <div class="contenedor">
+
+                <header class="zyra-cabecera reveal">
+                    <p class="etiqueta"><span class="num">01</span> Case study ·
+                        <span lang="es">Proyecto propio</span><span lang="en">Own venture</span></p>
+                    <h2 id="zyra-titulo" class="zyra-titulo">DigitalZyra</h2>
+                    <p class="zyra-lema" lang="es">Construyendo una agencia digital <em>desde cero.</em></p>
+                    <p class="zyra-lema" lang="en">Building a digital agency <em>from scratch.</em></p>
+                    <p class="zyra-intro" lang="es">
+                        DigitalZyra es la agencia tecnológica que he creado junto a mis socios, Kilian Barreto e Iker
+                        Alonso. Diseñamos webs, desarrollamos software a medida y creamos automatizaciones y agentes de
+                        IA para ayudar a las empresas a trabajar mejor y crecer.
+                    </p>
+                    <p class="zyra-intro" lang="en">
+                        DigitalZyra is the tech agency I co-founded with my partners, Kilian Barreto and Iker Alonso.
+                        We design websites, build custom software and create automations and AI agents that help
+                        businesses work better and grow.
+                    </p>
+                </header>
+
+                <div class="zyra-grid">
+
+                    <!-- VÍDEO (vertical, dentro de un marco de móvil) -->
+                    <div class="zyra-media reveal">
+                        <div class="movil">
+                            <!-- Para cambiar el vídeo: sustituye videos/video-digitalzyra.mp4 -->
+                            <video id="video-zyra" class="movil-video video-auto" muted loop playsinline preload="none"
+                                poster="img/poster-digitalzyra.webp" width="720" height="1280"
+                                aria-label="Vídeo de presentación de DigitalZyra"
+                                data-es-aria-label="Vídeo de presentación de DigitalZyra"
+                                data-en-aria-label="DigitalZyra showreel">
+                                <source src="videos/video-digitalzyra.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-controles">
+                            <button class="boton-video" type="button" data-video="video-zyra" data-accion="play"
+                                aria-label="Reproducir o pausar el vídeo"
+                                data-es-aria-label="Reproducir o pausar el vídeo" data-en-aria-label="Play or pause video">
+                                <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>
+                                <svg class="i-pausa" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+                            </button>
+                            <button class="boton-video" type="button" data-video="video-zyra" data-accion="sonido"
+                                aria-label="Activar o silenciar el sonido"
+                                data-es-aria-label="Activar o silenciar el sonido" data-en-aria-label="Mute or unmute">
+                                <svg class="i-mute" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m16 9 5 6m0-6-5 6"/></svg>
+                                <svg class="i-sonido" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+                            </button>
+                            <span class="etiqueta"><span lang="es">Vídeo · DigitalZyra</span><span lang="en">Video · DigitalZyra</span></span>
+                        </div>
+                    </div>
+
+                    <!-- HISTORIA DEL PROYECTO -->
+                    <div class="zyra-historia">
+
+                        <article class="zyra-bloque reveal">
+                            <h3 class="zyra-sub"><span lang="es">El problema</span><span lang="en">The problem</span></h3>
+                            <p lang="es">
+                                Muchos negocios pequeños y medianos quieren modernizarse, pero se encuentran con jerga
+                                técnica, plantillas genéricas y promesas exageradas. DigitalZyra nace para hacer lo
+                                contrario: <strong>tecnología sin humo</strong>, construida para resolver problemas
+                                reales.
+                            </p>
+                            <p lang="en">
+                                Many small and medium-sized businesses want to modernise, but run into technical jargon,
+                                generic templates and inflated promises. DigitalZyra was born to do the opposite:
+                                <strong>no-nonsense technology</strong>, built to solve real problems.
+                            </p>
+                        </article>
+
+                        <article class="zyra-bloque reveal">
+                            <h3 class="zyra-sub"><span lang="es">Mi papel</span><span lang="en">My role</span></h3>
+                            <p lang="es">
+                                Somos un equipo de tres personas y cada proyecto pasa por los tres de principio a fin.
+                                Dentro del equipo me ocupo del área de <strong>Diseño &amp; Experiencia</strong>:
+                                construyo el frontend y el backend de webs y software a medida, y llevo esa misma mirada
+                                de producto a las automatizaciones y los agentes de IA.
+                            </p>
+                            <p lang="en">
+                                We're a team of three and every project goes through all of us from start to finish.
+                                Within the team I lead <strong>Design &amp; Experience</strong>: I build the frontend and
+                                backend of websites and custom software, and bring the same product mindset to
+                                automations and AI agents.
+                            </p>
+                        </article>
+
+                        <article class="zyra-bloque reveal">
+                            <h3 class="zyra-sub"><span lang="es">Lo que desarrollamos</span><span lang="en">What we build</span></h3>
+                            <ul class="zyra-servicios">
+                                <li>
+                                    <span class="zs-num">01</span>
+                                    <strong><span lang="es">Desarrollo web</span><span lang="en">Web development</span></strong>
+                                    <span lang="es">Webs a medida, rápidas y responsive de verdad.</span>
+                                    <span lang="en">Custom, fast and truly responsive websites.</span>
+                                </li>
+                                <li>
+                                    <span class="zs-num">02</span>
+                                    <strong><span lang="es">Software a medida</span><span lang="en">Custom software</span></strong>
+                                    <span lang="es">Aplicaciones pensadas para cómo trabaja cada negocio.</span>
+                                    <span lang="en">Applications shaped around how each business works.</span>
+                                </li>
+                                <li>
+                                    <span class="zs-num">03</span>
+                                    <strong><span lang="es">Automatización</span><span lang="en">Automation</span></strong>
+                                    <span lang="es">Conectar herramientas y eliminar tareas repetitivas.</span>
+                                    <span lang="en">Connecting tools and removing repetitive tasks.</span>
+                                </li>
+                                <li>
+                                    <span class="zs-num">04</span>
+                                    <strong><span lang="es">Agentes de IA</span><span lang="en">AI agents</span></strong>
+                                    <span lang="es">Entrenados con información real, integrados en web y WhatsApp.</span>
+                                    <span lang="en">Trained on real business data, integrated into web and WhatsApp.</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="zyra-bloque reveal">
+                            <h3 class="zyra-sub"><span lang="es">Cómo trabajamos</span><span lang="en">How we work</span></h3>
+                            <ol class="zyra-proceso">
+                                <li><span>01</span><span lang="es">Escuchar</span><span lang="en">Listen</span></li>
+                                <li><span>02</span><span lang="es">Analizar</span><span lang="en">Analyse</span></li>
+                                <li><span>03</span><span lang="es">Diseñar y desarrollar</span><span lang="en">Design &amp; build</span></li>
+                                <li><span>04</span><span lang="es">Lanzar y mejorar</span><span lang="en">Launch &amp; improve</span></li>
+                            </ol>
+                        </article>
+
+                        <article class="zyra-bloque reveal">
+                            <h3 class="zyra-sub"><span lang="es">Qué representa para mí</span><span lang="en">What it means to me</span></h3>
+                            <p lang="es">
+                                Es el paso de aprender tecnología a construir con ella: un proyecto propio en el que
+                                diseño, desarrollo y negocio se deciden en el mismo equipo, y en el que cada decisión
+                                tiene impacto real.
+                            </p>
+                            <p lang="en">
+                                It's the step from learning technology to building with it: my own venture, where design,
+                                development and business are decided by the same team, and every decision has a real
+                                impact.
+                            </p>
+                        </article>
+
+                        <a class="boton boton--zyra reveal" href="https://digitalzyra.com/" target="_blank" rel="noopener">
+                            <span lang="es">Visitar DigitalZyra</span><span lang="en">Visit DigitalZyra</span>
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RUTINAPRO — CASE STUDY ================= -->
+        <!-- Enlace del repositorio: busca "github.com/AhmednahDevUI/RutinaPro" -->
+        <section id="rutinapro" class="rutina" aria-labelledby="rutina-titulo">
+            <div class="contenedor">
+
+                <header class="rutina-cabecera reveal">
+                    <p class="etiqueta"><span class="num">02</span>
+                        <span lang="es">Proyecto técnico · Aplicación web</span><span lang="en">Technical project · Web app</span></p>
+                    <h2 id="rutina-titulo" class="rutina-titulo">Rutina<span>Pro</span></h2>
+                    <p class="rutina-lema" lang="es">Entrena con método. <em>Progresa con datos.</em></p>
+                    <p class="rutina-lema" lang="en">Train with method. <em>Progress with data.</em></p>
+                    <p class="rutina-intro" lang="es">
+                        Aplicación web para la gestión de entrenamientos físicos, desarrollada de principio a fin en
+                        Java con arquitectura MVC: desde la base de datos hasta la última pantalla.
+                    </p>
+                    <p class="rutina-intro" lang="en">
+                        A web application for managing physical training, built end to end in Java with an MVC
+                        architecture: from the database to the very last screen.
+                    </p>
+                </header>
+
+                <div class="rutina-grid">
+
+                    <!-- VÍDEO (vertical, dentro de un marco de móvil) -->
+                    <div class="rutina-media reveal">
+                        <div class="movil movil--rutina">
+                            <!-- Para cambiar el vídeo: sustituye videos/video-rutinapro.mp4 -->
+                            <video id="video-rutina" class="movil-video video-auto" muted loop playsinline preload="none"
+                                poster="img/poster-rutinapro.webp" width="720" height="1280"
+                                aria-label="Vídeo de presentación de RutinaPro"
+                                data-es-aria-label="Vídeo de presentación de RutinaPro"
+                                data-en-aria-label="RutinaPro showreel">
+                                <source src="videos/video-rutinapro.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-controles">
+                            <button class="boton-video" type="button" data-video="video-rutina" data-accion="play"
+                                aria-label="Reproducir o pausar el vídeo"
+                                data-es-aria-label="Reproducir o pausar el vídeo" data-en-aria-label="Play or pause video">
+                                <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>
+                                <svg class="i-pausa" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+                            </button>
+                            <button class="boton-video" type="button" data-video="video-rutina" data-accion="sonido"
+                                aria-label="Activar o silenciar el sonido"
+                                data-es-aria-label="Activar o silenciar el sonido" data-en-aria-label="Mute or unmute">
+                                <svg class="i-mute" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m16 9 5 6m0-6-5 6"/></svg>
+                                <svg class="i-sonido" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+                            </button>
+                            <span class="etiqueta"><span lang="es">Vídeo · RutinaPro</span><span lang="en">Video · RutinaPro</span></span>
+                        </div>
+                    </div>
+
+                    <!-- HISTORIA DEL PROYECTO -->
+                    <div class="rutina-historia">
+
+                        <article class="rutina-bloque reveal">
+                            <h3 class="rutina-sub"><span lang="es">Qué es</span><span lang="en">What it is</span></h3>
+                            <p lang="es">
+                                <strong>RutinaPro</strong> permite a los usuarios registrarse y crear rutinas
+                                personalizadas, organizadas en entrenamientos y ejercicios. Su estructura jerárquica
+                                facilita organizar el progreso deportivo: crear, editar y eliminar de forma sencilla e
+                                intuitiva.
+                            </p>
+                            <p lang="en">
+                                <strong>RutinaPro</strong> lets users sign up and create personalised routines, organised
+                                into workouts and exercises. Its hierarchical structure makes it easy to organise training
+                                progress: create, edit and delete in a simple, intuitive way.
+                            </p>
+                        </article>
+
+                        <article class="rutina-bloque reveal">
+                            <h3 class="rutina-sub"><span lang="es">Cómo se organiza</span><span lang="en">How it's organised</span></h3>
+                            <ol class="rutina-jerarquia">
+                                <li><span class="rj-num">01</span><strong><span lang="es">Rutina</span><span lang="en">Routine</span></strong>
+                                    <span lang="es">El objetivo y el tipo de entrenamiento.</span><span lang="en">The goal and type of training.</span></li>
+                                <li><span class="rj-num">02</span><strong><span lang="es">Entrenamiento</span><span lang="en">Workout</span></strong>
+                                    <span lang="es">Cada sesión, con fecha, duración y notas.</span><span lang="en">Each session, with date, duration and notes.</span></li>
+                                <li><span class="rj-num">03</span><strong><span lang="es">Ejercicio</span><span lang="en">Exercise</span></strong>
+                                    <span lang="es">Repeticiones o duración de cada ejercicio.</span><span lang="en">Reps or duration for each exercise.</span></li>
+                                <li><span class="rj-num">04</span><strong><span lang="es">Historial</span><span lang="en">History</span></strong>
+                                    <span lang="es">Todo queda registrado para medir el progreso.</span><span lang="en">Everything is logged to measure progress.</span></li>
+                            </ol>
+                        </article>
+
+                        <article class="rutina-bloque reveal">
+                            <h3 class="rutina-sub"><span lang="es">Cómo está construido</span><span lang="en">How it's built</span></h3>
+                            <ol class="rutina-capas">
+                                <li><span><span lang="es">Vista</span><span lang="en">View</span></span><strong>JSP · HTML · CSS · JS</strong></li>
+                                <li><span><span lang="es">Controlador</span><span lang="en">Controller</span></span><strong>Servlets</strong></li>
+                                <li><span><span lang="es">Servicios</span><span lang="en">Services</span></span><strong><span lang="es">Lógica de negocio</span><span lang="en">Business logic</span></strong></li>
+                                <li><span>DAO</span><strong><span lang="es">Acceso a datos</span><span lang="en">Data access</span></strong></li>
+                                <li><span><span lang="es">Base de datos</span><span lang="en">Database</span></span><strong>SQL · MySQL</strong></li>
+                            </ol>
+                        </article>
+
+                        <article class="rutina-bloque reveal">
+                            <h3 class="rutina-sub"><span lang="es">Tecnologías</span><span lang="en">Tech stack</span></h3>
+                            <ul class="rutina-stack">
+                                <li class="destacado">Java</li>
+                                <li><span lang="es">Arquitectura MVC</span><span lang="en">MVC architecture</span></li>
+                                <li><span lang="es">Base de datos SQL</span><span lang="en">SQL database</span></li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </article>
+
+                        <a class="boton boton--rutina reveal" href="https://github.com/AhmednahDevUI/RutinaPro" target="_blank" rel="noopener">
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-github"/></svg>
+                            <span lang="es">Ver repositorio</span><span lang="en">View repository</span>
+                            <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section id="experience" class="section">
+            <div class="contenedor">
+
+                <div class="section-title reveal">
+                    <p class="etiqueta"><span class="num">04</span>
+                        <span lang="es">Experiencia</span><span lang="en">Experience</span></p>
+                    <h2 lang="es">La base: <em>sistemas, soporte y mantenimiento.</em></h2>
+                    <h2 lang="en">The foundation: <em>systems, support and maintenance.</em></h2>
+                </div>
+
+                <ol class="timeline">
+                    <!-- Experiencia 1 -->
+                    <li class="timeline-item reveal">
+                        <p class="timeCapa">2023 — 2024</p>
+                        <div class="timeline-cuerpo">
+                            <h3 class="titloCapa"><span lang="es">Técnico Informático</span><span lang="en">IT Technician</span></h3>
+                            <p class="tituloAzul">Binary Systems · Santa Cruz de Tenerife</p>
+                            <ul class="textoCapasUl" lang="es">
+                                <li>Soporte técnico y atención al cliente para resolver incidencias de hardware y software.</li>
+                                <li>Administración de sistemas: configuración, monitorización y mantenimiento de servidores.</li>
+                                <li>Mantenimiento preventivo y correctivo, y reparación de equipos informáticos.</li>
+                                <li>Montaje y configuración de equipos a medida según las especificaciones del cliente.</li>
+                            </ul>
+                            <ul class="textoCapasUl" lang="en">
+                                <li>Technical support and customer service, resolving hardware and software issues.</li>
+                                <li>Systems administration: server configuration, monitoring and maintenance.</li>
+                                <li>Preventive and corrective maintenance, and computer repair.</li>
+                                <li>Assembly and configuration of custom-built computers to client specifications.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Experiencia 2 -->
+                    <li class="timeline-item reveal">
+                        <p class="timeCapa">2021 — 2022</p>
+                        <div class="timeline-cuerpo">
+                            <h3 class="titloCapa"><span lang="es">Mantenimiento de Equipos Informáticos</span><span lang="en">Computer Maintenance</span></h3>
+                            <p class="tituloAzul">Asociación AISA · Santa Cruz de Tenerife</p>
+                            <ul class="textoCapasUl" lang="es">
+                                <li>Revisión periódica y mantenimiento físico de los equipos informáticos de la asociación.</li>
+                                <li>Implementación y gestión de soluciones de seguridad informática, incluido software antivirus.</li>
+                                <li>Copias de seguridad para garantizar la integridad y disponibilidad de los datos.</li>
+                                <li>Apoyo en la gestión de información, aplicando políticas de privacidad y protección de datos.</li>
+                            </ul>
+                            <ul class="textoCapasUl" lang="en">
+                                <li>Regular checks and physical maintenance of the association's computers.</li>
+                                <li>Implementation and management of IT security solutions, including antivirus software.</li>
+                                <li>Backups to ensure data integrity and availability.</li>
+                                <li>Support with information management, applying privacy and data-protection policies.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ================= Formación ================= -->
+        <section id="education" class="section">
+            <div class="contenedor">
+
+                <div class="section-title reveal">
+                    <p class="etiqueta"><span class="num">05</span>
+                        <span lang="es">Formación</span><span lang="en">Education</span></p>
+                    <h2 lang="es">Dos titulaciones, <em>un mismo recorrido.</em></h2>
+                    <h2 lang="en">Two qualifications, <em>one path.</em></h2>
+                </div>
+
+                <div class="formacion">
+                    <!-- Grado Superior Formación CCC -->
+                    <article class="formacion-item reveal">
+                        <p class="formacion-sigla" aria-hidden="true">DAW</p>
+                        <div class="formacion-cuerpo">
+                            <p class="timeCapa">2024 — 2026</p>
+                            <h3 class="titloCapa" lang="es">FP Grado Superior en Desarrollo de Aplicaciones Web</h3>
+                            <h3 class="titloCapa" lang="en">Higher VET Diploma in Web Application Development</h3>
+                            <p class="tituloAzul">Centro de Estudios Profesionales CCC</p>
+                            <ul class="textoCapasUl" lang="es">
+                                <li>Desarrollo de aplicaciones web front-end y back-end.</li>
+                                <li>HTML, CSS, JavaScript, PHP y bases de datos.</li>
+                                <li>Proyectos prácticos, incluido este portfolio web personal.</li>
+                                <li>Diseño responsive, buenas prácticas y control de versiones.</li>
+                                <li>Curso certificado en Big Data, orientado al análisis y gestión de datos.</li>
+                            </ul>
+                            <ul class="textoCapasUl" lang="en">
+                                <li>Front-end and back-end web application development.</li>
+                                <li>HTML, CSS, JavaScript, PHP and databases.</li>
+                                <li>Hands-on projects, including this personal portfolio.</li>
+                                <li>Responsive design, best practices and version control.</li>
+                                <li>Certified Big Data course, focused on data analysis and management.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Grado Medio César Manrique -->
+                    <article class="formacion-item reveal">
+                        <p class="formacion-sigla" aria-hidden="true">SMR</p>
+                        <div class="formacion-cuerpo">
+                            <p class="timeCapa">2022 — 2024</p>
+                            <h3 class="titloCapa" lang="es">FP Grado Medio en Sistemas Microinformáticos y Redes</h3>
+                            <h3 class="titloCapa" lang="en">VET Diploma in Microcomputer Systems and Networks</h3>
+                            <p class="tituloAzul">CIFP César Manrique</p>
+                            <ul class="textoCapasUl" lang="es">
+                                <li>Instalación, configuración y mantenimiento de sistemas informáticos.</li>
+                                <li>Gestión de redes locales, hardware y software.</li>
+                                <li>Resolución de incidencias y soporte técnico al usuario.</li>
+                                <li>Nociones de seguridad y administración básica de sistemas.</li>
+                            </ul>
+                            <ul class="textoCapasUl" lang="en">
+                                <li>Installation, configuration and maintenance of computer systems.</li>
+                                <li>Local network, hardware and software management.</li>
+                                <li>Troubleshooting and end-user technical support.</li>
+                                <li>Security fundamentals and basic systems administration.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <!-- Email, LinkedIn, X y GitHub: cambia los href de este bloque -->
+        <section id="contact" class="contacto" aria-labelledby="contacto-titulo">
+            <div class="contenedor">
+                <p class="etiqueta"><span class="num">06</span>
+                    <span lang="es">Contacto</span><span lang="en">Contact</span></p>
+
+                <h2 id="contacto-titulo" class="contacto-titulo reveal">
+                    <span lang="es">¿Construimos algo <em>juntos?</em></span>
+                    <span lang="en">Shall we build something <em>together?</em></span>
+                </h2>
+
+                <p class="contacto-texto reveal" lang="es">
+                    Estoy abierto a nuevos proyectos, colaboraciones y oportunidades como desarrollador. Escríbeme y te
+                    respondo.
+                </p>
+                <p class="contacto-texto reveal" lang="en">
+                    I'm open to new projects, collaborations and developer roles. Drop me a line and I'll get back to you.
+                </p>
+
+                <div class="contacto-email reveal">
+                    <a class="email-grande" href="mailto:ahmednahdesarrollador@gmail.com">ahmednahdesarrollador@gmail.com</a>
+                    <button id="btn-copiar" class="boton-copiar" type="button" data-email="ahmednahdesarrollador@gmail.com">
+                        <span class="copiar-texto"><span lang="es">Copiar email</span><span lang="en">Copy email</span></span>
+                        <span class="copiado-texto" aria-live="polite"><span lang="es">¡Copiado!</span><span lang="en">Copied!</span></span>
+                    </button>
+                </div>
+
+                <ul class="redes reveal">
+                    <li><a href="https://www.linkedin.com/in/ahmednah-mohamed-saleh-87361a36b" target="_blank" rel="noopener">
+                        <svg width="20" height="20" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a></li>
+                    <li><a href="https://github.com/AhmednahDevUI" target="_blank" rel="noopener">
+                        <svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a></li>
+                    <li><a href="https://x.com/AhmednahDevUI" target="_blank" rel="noopener">
+                        <svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg> X</a></li>
+                    <li><a href="mailto:ahmednahdesarrollador@gmail.com">
+                        <svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg> Email</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="contenedor footer-content">
+            <div class="capaIzquierda-footer">
+                <img src="img/favicon.svg" alt="" width="36" height="36">
+                <div>
+                    <p class="titulo-footer">Ahmednah Mohamed Saleh</p>
+                    <p class="parafo-footer">
+                        <span lang="es">Desarrollador web full-stack · Co-creador de DigitalZyra</span>
+                        <span lang="en">Full-stack web developer · Co-creator of DigitalZyra</span>
+                    </p>
+                </div>
+            </div>
+
+            <nav class="menu-footer" aria-label="Pie de página" data-es-aria-label="Pie de página" data-en-aria-label="Footer">
+                <ul>
+                    <li><a href="#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+                    <li><a href="#project"><span lang="es">Proyectos</span><span lang="en">Work</span></a></li>
+                    <li><a href="#experience"><span lang="es">Experiencia</span><span lang="en">Experience</span></a></li>
+                    <li><a href="#education"><span lang="es">Formación</span><span lang="en">Education</span></a></li>
+                    <li><a href="#contact"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-base">
+                <p id="autor" class="parafo2-footer">&copy; 2026 Ahmednah Mohamed Saleh.
+                    <span lang="es">Todos los derechos reservados.</span><span lang="en">All rights reserved.</span></p>
+                <a class="volver-arriba" href="#header">
+                    <span lang="es">Volver arriba</span><span lang="en">Back to top</span> ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/javaScriot.js" defer></script>
+
+</body>
+
+</html>
