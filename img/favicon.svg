@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    Favicon de Ahmednah — "El camino hacia el horizonte"
+    · Un camino que cruza el desierto y se construye tramo a tramo, desde cero.
+    · En el horizonte está saliendo un sol que es un píxel: la tecnología, el futuro.
+    · Todavía no ha salido del todo: es el camino, no la meta.
+    · Camino + sol dibujan, sin decirlo, la silueta de una A.
+  -->
+  <defs>
+    <clipPath id="c"><rect width="64" height="64" rx="15"/></clipPath>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3517b8"/>
+      <stop offset="1" stop-color="#7352ff"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="64" height="38.0" fill="url(#cielo)"/>
+    <!-- sol-píxel saliendo por el horizonte -->
+    <rect x="23" y="26" width="18" height="18" rx="1.5" fill="#ffc15e"/>
+    <!-- desierto de noche -->
+    <rect y="38.0" width="64" height="26.0" fill="#140c36"/>
+    <!-- el camino, tramo a tramo -->
+    <g fill="#f7d9a0">
+      <polygon points="29.00,40.00 35.00,40.00 39.50,44.50 24.50,44.50"/>
+      <polygon points="20.50,48.50 43.50,48.50 49.00,54.00 15.00,54.00"/>
+      <polygon points="11.00,58.00 53.00,58.00 65.00,70.00 -1.00,70.00"/>
+    </g>
+  </g>
+</svg>
